@@ -6,8 +6,7 @@ function dockingStation(MAXBIKECAPACITY){
 
 dockingStation.prototype.releaseBike = function(){
   if (this.isEmpty()) return ('no bikes available');
-  // return this.bikes.pop();
-  if (bike.working) return this.bikes.pop();
+  if (this.bikes[this.bikes.length -1].working) return this.bikes.pop();
 };
 
 dockingStation.prototype.dockBike = function(bike){
