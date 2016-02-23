@@ -1,29 +1,26 @@
 function van(){
-  this.brokenBikes = [];
+  this.bikes = [];
 }
 
-// van.prototype.collectBikes = function(dockingstationbikes){
-//     this.filterBrokenBikes(dockingstationbikes);
-// };
-
-// van.prototype.filterBrokenBikes = function(dockingstationbikes){
-//   var array = this.brokenBikes;
-//   dockingstationbikes.forEach(function(f){
-//     if (f.working === false) {
-//       array.push(f);
-//     }
-//   });
-
-
-van.prototype.try = function(dockingstationbikes){
-  var box = this.brokenBikes;
+van.prototype.collectBrokenBikes = function(dockingstationbikes){
+  var box = this.bikes;
   dockingstationbikes.forEach(function(x){
-    if (x.working === false);
-      // box.push(x);
-      box.push(x);
-      // this.brokenBikes.push(box);
+    if (x.working === false) box.push(x);
+    for (i = 0; i < dockingstationbikes.length; ++i) {
+    if (dockingstationbikes[i].working === false ) {
+        dockingstationbikes.splice(i--, 1);
+    }
+}
+
+
   });
-    // this.brokenBikes.push(box);
+
+// van.prototype.deliverBrokenBikes = function(garage){
+//   var box = this.bikes;
+//   box.forEach(function(x){
+//     garage.push(x);
+//   });
+// };
 
 
 };

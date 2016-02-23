@@ -7,16 +7,22 @@ describe ('van', function(){
     van1 = new van();
     bike1 = new bike();
     bike2 = new bike();
+    bike3 = new bike();
+    // garage1 = new garage();
+    vanbrokenbikes = bike1.broken(); bike2.broken(); dock.dockBike(bike1); dock.dockBike(bike3); dock.dockBike(bike2);
   });
 
   it('takes broken bikes from docking stations', function(){
-    bike1.broken();
-    dock.dockBike(bike1);
-    dock.dockBike(bike2);
+console.log(dock.bikes);
+    van1.collectBrokenBikes(dock.bikes);
     console.log(dock.bikes);
-    van1.try(dock.bikes);
-    console.log(van1.brokenBikes);
-    expect(van1.brokenBikes).toEqual([bike1]);
+    expect(van1.bikes).toContain(bike1);
+    expect(dock.bikes).not.toContain(bike1);
   });
+
+  // it('delivers broken bikes to garage', function(){
+  //   van1.deliverBrokenBikes(garage1.bikes);
+  //   expect(van1.bikes).toEqual([]);
+  // });
 
 });

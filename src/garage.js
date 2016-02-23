@@ -1,0 +1,3 @@
+// function garage(){
+//   this.bikes = [];
+// }
