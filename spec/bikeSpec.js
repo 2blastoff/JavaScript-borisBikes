@@ -2,7 +2,6 @@ describe ('bike', function(){
 
 beforeEach(function(){
   bike1 = new bike();
-
 });
 
   describe ('#isWorking', function(){
@@ -12,14 +11,14 @@ beforeEach(function(){
   });
 
   describe ('#broken', function(){
-    it('changes the working status of bike to broken(false)', function(){
+    it('broken changes the working status of bike to broken(false)', function(){
       bike1.broken();
       expect(bike1.isWorking()).toEqual(false);
     });
   });
 
   describe ('#fix', function(){
-    it('changes the working status of broken bike to fixed(true)', function(){
+    it('fix changes the working status of broken bike to fixed(true)', function(){
       bike1.broken();
       bike1.fix();
       expect(bike1.isWorking()).toEqual(true);

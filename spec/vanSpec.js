@@ -3,8 +3,25 @@ describe ('van', function(){
 beforeEach(function(){
     dock = new dockingStation();
     van1 = new van();
-    bike1 = new bike();
-    bike2 = new bike();
+    bike1 = {
+      working: true,
+      broken: function(){
+        this.working = false;
+      },
+      fix: function(){
+        this.working = true;
+      }
+    };
+    bike2 = {
+      working: true,
+      broken: function(){
+        this.working = false;
+      },
+      fix: function(){
+        this.working = true;
+      }
+    };
+
     garage1 = new garage();
     bike1.broken(); bike2.broken(); dock.dockBike(bike1); dock.dockBike(bike2);
     van1.collectBrokenBikes(dock.bikes);

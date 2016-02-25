@@ -2,8 +2,19 @@ describe ('dockingStation', function(){
 
 beforeEach(function(){
   dock = new dockingStation();
-  bike1 = new bike();
-  bike2 = new bike();
+  bike1 = {
+    working: true,
+    broken: function() {
+      this.working = false;
+    }
+  };
+
+  bike2 = {
+    working: true,
+    broken: function(){
+      this.working = false;
+    }
+  };
   MAXBIKECAPACITY = dock.MAXBIKECAPACITY;
 });
 
