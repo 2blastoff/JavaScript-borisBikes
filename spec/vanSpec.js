@@ -9,9 +9,9 @@ beforeEach(function(){
     bike1.broken(); bike2.broken(); dock.dockBike(bike1); dock.dockBike(bike2);
     van1.collectBrokenBikes(dock.bikes);
   });
-  
+
   describe ('#collectBrokenBikes', function(){
-    it('collectBrokenBikes collects broken bikes from docking stations', function(){
+    it('collects broken bikes from docking stations', function(){
       van1.collectBrokenBikes(dock.bikes);
       expect(van1.vanBikes).toEqual([bike1, bike2]);
       expect(dock.bikes).not.toContain(bike1, bike2);
@@ -19,7 +19,7 @@ beforeEach(function(){
   });
 
   describe ('#deliverBrokenBikes', function(){
-    it('deliverBrokenBikes delivers broken bikes to garage', function(){
+    it('delivers broken bikes to garage', function(){
       van1.deliverBrokenBikes(garage1.garageBikes);
       expect(van1.bikes).not.toContain(bike1, bike2);
       expect(garage1.garageBikes).toEqual([bike1, bike2]);
@@ -27,7 +27,7 @@ beforeEach(function(){
   });
 
   describe ('#collectFixedBikes', function(){
-    it('collectFixedBikes collects fixed bikes from garage', function(){
+    it('collects fixed bikes from garage', function(){
       van1.deliverBrokenBikes(garage1.garageBikes);
       bike1.fix();
       van1.collectFixedBikes(garage1.garageBikes);
@@ -37,7 +37,7 @@ beforeEach(function(){
   });
 
   describe ('#deliverFixedBikes', function(){
-    it('deliverFixedBikes delivers fixed bikes to docking station', function(){
+    it('delivers fixed bikes to docking station', function(){
       van1.deliverBrokenBikes(garage1.garageBikes);
       bike1.fix();
       van1.collectFixedBikes(garage1.garageBikes);

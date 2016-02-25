@@ -2,23 +2,24 @@ describe ('bike', function(){
 
 beforeEach(function(){
   bike1 = new bike();
+
 });
 
   describe ('#isWorking', function(){
-    it ('isWorking returns working state of bike (default true)', function(){
+    it ('returns working state of bike (default true)', function(){
       expect(bike1.isWorking()).toEqual(true);
     });
   });
 
   describe ('#broken', function(){
-    it('broken changes the working status of bike to broken(false)', function(){
+    it('changes the working status of bike to broken(false)', function(){
       bike1.broken();
       expect(bike1.isWorking()).toEqual(false);
     });
   });
 
   describe ('#fix', function(){
-    it('fix changes the working status of broken bike to fixed(true)', function(){
+    it('changes the working status of broken bike to fixed(true)', function(){
       bike1.broken();
       bike1.fix();
       expect(bike1.isWorking()).toEqual(true);

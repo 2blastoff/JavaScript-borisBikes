@@ -11,7 +11,9 @@ beforeEach(function(){
     van1.deliverBrokenBikes(garage1.garageBikes);
 });
 
-  it('#holdingBikes returns bike list in garage', function(){
+describe ('#holdingBikes', function(){
+  it('returns bike list in garage', function(){
     expect(garage1.holdingBikes()).toEqual([bike1, bike2]);
   });
+});
 });
