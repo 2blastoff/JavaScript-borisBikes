@@ -18,12 +18,6 @@ beforeEach(function(){
       }
       expect(dock.dockBike()).toEqual('cant dock over capacity');
     });
-    it('returns true when the docking station is full', function(){
-      for(var i = 0; i < MAXBIKECAPACITY; i++){
-        dock.dockBike();
-      }
-      expect(dock.isFull()).toEqual(true);
-    });
     it('allows broken bikes to be returned', function (){
       bike1.broken();
       dock.dockBike(bike1);
@@ -57,9 +51,15 @@ beforeEach(function(){
   });
 
   describe ('#isFull', function(){
-    it('states if docking station is not full', function(){
+    it('returns false when the docking station is not full', function(){
       dock.dockBike();
       expect(dock.isFull()).toEqual(false);
+    });
+    it('returns true when the docking station is full', function(){
+      for(var i = 0; i < MAXBIKECAPACITY; i++){
+        dock.dockBike();
+      }
+      expect(dock.isFull()).toEqual(true);
     });
   });
 });
